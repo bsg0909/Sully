@@ -1,0 +1,20 @@
+package com.ez.herb.common;
+
+public class Utility {
+	//페이지 처리 관련 상수
+	public static final int BLOCK_SIZE=10;
+	public static final int RECORD_COUNT=5;
+	
+	public static String getFileInfo(String originalFileName,
+			long fileSize) {
+		//파일정보 리턴해주는 메서드
+		String fileInfo="";
+		
+		if(originalFileName != null && !originalFileName.isEmpty()) {
+			float fSize=fileSize/1024f;
+			fSize=Math.round(fSize)*100/100f;
+			fileInfo=originalFileName+"("+fSize+"KB)";
+		}
+		return fileInfo;
+	}
+}
